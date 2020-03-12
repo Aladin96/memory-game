@@ -1,0 +1,343 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  background-color: #552F7F;
+  font-family: 'Acme', sans-serif;
+  overflow-x: hidden;
+  cursor: none
+}
+
+.inner-bg {
+  width: 100%;
+  background-image: url(../images/bg.png);
+  background-size: contain;
+  z-index: -1;
+  height: 100%;
+  position: fixed;
+  height: 105px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  transition: .8s ease;
+}
+
+/* Start Global */
+.row {
+  display: flex;
+  margin-top: 20px
+}
+
+.hide {
+  display: none !important
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* End Global */
+
+/* Level Game */
+.level-section{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.level-time{
+  font-size: 20rem;
+  color: #ffd527;
+  text-shadow: 2px 5px 0px #fff;
+  transition: .4s ease
+}
+
+.animate{
+  transform: scale(0.5);
+}
+
+/* End Level Game */
+
+/* Star Game Section */
+.game-section {
+  padding: 20px;
+  background: #6D3EA2;
+  border: 20px solid #603590;
+  border-radius: 28px;
+  box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.1);
+  float: left
+}
+
+.game-flip {
+  margin: 0 10px 0 10px;
+  perspective: 1000px;
+}
+
+.game-card {
+  position: relative;
+  width: 170px;
+  height: 130px;
+  cursor: pointer;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.game-front {
+  background: linear-gradient(45deg, #3f1f63, #5e368a);
+  margin: 0 10px 0 10px;
+  border-radius: 25px;
+  box-shadow: 0px 8px 0px #5a308a;
+  text-align: center;
+  color: #7747ad;
+  font-size: 110px;
+  font-weight: bold;
+}
+
+.game-back {
+  transform: rotateY(180deg);
+}
+
+.game-card .game-back img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 0px #5a308a;
+  border: 2px solid #3f1f63;
+}
+
+.game-back, .game-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+/* End Game Section */
+/* Start Aside [ Time and best Time Boxes] */
+.aside {
+  float: left;
+  margin: auto;
+  margin-top: 60px;
+  margin-left: 88px;
+}
+
+.time-section, .best-time {
+  max-width: 300px;
+  padding: 20px;
+  background: #6D3EA2;
+  border: 20px solid #603590;
+  border-radius: 28px;
+  box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.level{ margin-top: 15px;}
+.level h4{
+  color: #fff;
+  font-size: 32px;
+}
+.level label{
+  position: relative;
+  display: inline-block;
+  padding-left: 22px;
+  margin-right: 5px;
+  margin-top: 10px;
+  color: #ffd527;
+}
+.level label input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #552f7fde;
+  border-radius: 50%;
+  border: 2px solid #421f69;
+}
+
+label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 7px;
+  left: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+}
+
+label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+label input:checked ~ .checkmark {
+  box-shadow: inset 0px 0px 2px #0000006b;
+  border: none
+}
+label input:checked ~ .hard{
+    background-color: #FE214F;
+}
+label input:checked ~ .medium{
+    background-color: #FFD527;
+}
+label input:checked ~ .easy{
+    background-color: #09d4de;
+}
+/* Show the indicator (dot/circle) when checked */
+label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.title-score {
+  font-weight: bold;
+  font-size: 45px;
+  color: #ffd527;
+  letter-spacing: 15px;
+  text-shadow: 3px 3px 0px #7d6709;
+}
+
+.timer {
+  font-weight: bold;
+  font-size: 45px;
+  color: #fff;
+}
+
+.play, .reset {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 24px;
+  padding: 9px;
+  width: 80%;
+  cursor: pointer;
+}
+
+.play {
+  background: #4d2974;
+  box-shadow: 2px 3px 0px #603590;
+}
+
+.reset {
+  background: #DA2C6D;
+  box-shadow: 2px 3px 0px #af2357;
+}
+
+/* End Aside */
+/* Start Win Section */
+.win-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.win {
+  text-align: center
+}
+
+.win h2 {
+  font-size: 68px;
+  color: #ffd527;
+  text-shadow: 2px 3px 0px #581d30;
+  animation: scales 0.5s infinite cubic-bezier(0.11, 0.02, 0.99, 0.86);
+}
+.win h4{
+  font-size: 38px;
+  color: #fff
+}
+.win img {
+  width: 100px;
+}
+
+.close {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 24px;
+  padding: 9px;
+  width: 100px;
+  cursor: pointer;
+  background: #da2c2c;
+  box-shadow: 2px 3px 0px #af2323;
+  margin-top: 10px
+}
+
+/* End Win Section */
+/* Start Cursor */
+.cursor {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid #09d4de;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  transition: all .3s ease;
+  transition-property: transform, background;
+  transform-origin: 100% 100%;
+  pointer-events: none;
+}
+
+.cursorHover {
+  transform: scale(1.4);
+  background: rgba(9, 212, 222, 0.5)
+}
+
+@keyframes scales {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+/* End Cursor */
+/* Start Footer */
+footer {
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+  margin-top: 20px
+}
+footer a{
+  text-decoration: none;
+  color:#ffd527;
+  font-size: bold
+}
+/* End Footer */

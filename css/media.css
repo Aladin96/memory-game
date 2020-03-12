@@ -1,0 +1,82 @@
+@media (max-width:404px){
+
+  .game-section{
+        float:none !important;
+        margin: auto !important ;
+        
+    }
+   .game-card{
+       width: 50px;
+       height: 50px;
+    }
+    .game-front span{
+        font-size: 100px;
+    }  
+
+}
+/* Media EXTRA SMALL Screen */
+@media (max-width: 767px){
+ 	.game-section{
+        float:none !important;
+        margin: auto !important ;
+       
+    }
+  .game-card{
+       width: 100px;
+       height: 100px;
+    }
+    .game-front span{
+        font-size: 100px;
+    } 
+ 
+    .best-time{
+        margin-top: 52px;
+        margin-left: 40px;
+        float: left;
+    }
+    .time-section, .best-time{ float:left}
+
+}
+
+/* Media SMALL Screen */
+@media (min-width: 768px) and (max-width: 992px) {
+     
+    .game-section{
+        float:none !important;
+        margin: auto !important ;
+        
+    }
+    .game-card{
+       width: 120px;
+       height: 100px;
+    }
+    .game-front span{
+        font-size: 100px;
+    } 
+ 
+    .best-time{
+        margin-top: 52px;
+        margin-left: 40px;
+        float: left;
+    }
+    .time-section, .best-time{ float:left}
+}
+
+/* Media MEDIUM Screen */
+@media (min-width:993px) and (max-width: 1199px){
+    .best-time{
+        margin-top: 52px;
+        margin-left: 40px;
+        float: left;
+    }
+    .time-section, .best-time{ float:left}
+
+}
+  /* LARGE Screen */
+@media (min-width:1200px){
+
+}
+
+@media only screen{
+    
+}
